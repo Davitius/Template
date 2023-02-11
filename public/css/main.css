@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    transition: 0.4s;
+}
+
+/*სათაური*/
+.header-3 {
+    color: #505050;
+}
+
+
+/*შაბლონის სტრუქტურა*/
+.RC {
+    background: white;
+}
+.LC {
+
+}
+
+
+/*შაბლონი News*/
+.textFrame {
+    border: 1px solid lightgrey;
+    /*min-height: 15em;*/
+    border-radius: 10px;
+    box-shadow:-10px 10px 10px rgba(0,0,0,0.3);
+    margin-bottom: 2em;
+    padding: 15px;
+}
+.rowFlex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.textFrameTitle {
+    width: 100%;
+    margin-bottom: 5px;
+}
+.TFTT {
+    border-radius: 6px;
+    color: #c27049;
+    font-weight: bold;
+    padding: 5px 10px;
+    width: 75%;
+    border: 2px solid navajowhite;
+    background: #f8efd7;
+}
+.textFrameDate {
+    font-size: 12px;
+}
+.TFTDate {
+    color: blue;
+    padding: 5px 10px;
+    border: 2px solid lightblue;
+    border-radius: 6px;
+}
+
+.TFID {
+    padding: 0 10px 10px 10px;
+}
+.TFTD {
+    border-radius: 10px;
+}
+.TFTDD {
+    border-radius: 10px;
+    padding: 10px;
+    background: #f8efd7;
+    border: 2px solid navajowhite;
+}
+.TFI {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.textFrameBody {
+    /*padding: 15px;*/
+    text-align: left;
+}
+.textFBTND {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    margin-top: 5px;
+}
+
+/*სიახლე კონკრეტული*/
+.newsImage {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+
+
+/*საჭირო ბმულები*/
+.usefullLinks {
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background: #29395a;
+    min-height: 200px;
+    padding: 20px 0 20px 0;
+}
+
+
+
+/*მოძრავი ისერები "ნახე მეტი"*/
+.arrow-body {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content:end;
+    width: 100%;
+    margin-top: 5px;
+}
+.seeMoreArr {
+    display: block;
+    margin-right: 50px;
+    font-size: 14px;
+    color: dimgrey;
+    text-decoration: none;
+}
+.seeMoreArr:hover {
+    color: green;
+}
+.arrow {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-top: 4px solid greenyellow;
+    border-left: 4px solid greenyellow;
+    transform: rotate(135deg);
+    animation: arrow-load 2s infinite;
+}
+.arrow:nth-child(1) {
+    left: 25px;
+    animation-delay: -0.4s;
+}
+.arrow:nth-child(2) {
+    animation-delay: -0.2s;
+}
+.arrow:nth-child(3) {
+    right: 25px;
+}
+.arrow:hover {
+
+}
+@keyframes arrow-load {
+    0%
+    {
+        opacity: 0;
+        transform: rotate(135deg) translate(30px, 30px);
+    }
+    0%
+    {
+        opacity: 1;
+    }
+    100%
+    {
+        opacity: 0;
+        transform: rotate(135deg) translate(-30px, -30px);
+    }
+}
+
+
+
+/*კონტაქტი*/
+.addressDiv {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 5em 0 5em 0;
+}
+.address {
+    box-shadow:-10px 10px 10px rgba(0,0,0,0.3);
+    width: 300px;
+    margin-bottom: 5em;
+}
+.addressTitle {
+    background: #bfbebb;
+    padding: 10px;
+    border-radius: 8px 8px 0 0;
+    font-weight: 600;
+}
+.addressBody {
+    padding: 20px;
+    border: 1px solid #bfbebb;
+}
+
+
+/*გუგლ-რუქა ლოკაცია.*/
+#map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+}
+
+
+/*შაბლონი "story; New"*/
+.story {
+    border: 1px solid lightgrey;
+    min-height: 15em;
+    border-radius: 10px;
+    box-shadow:-10px 10px 10px rgba(0,0,0,0.3);
+    padding: 15px;
+}
+
+.storyBody {
+    min-height: 10em;
+    background: #f8efd7;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: left;
+    border: 2px solid navajowhite;
+}
