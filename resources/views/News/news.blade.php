@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="" style="min-height: 40em">
-        <h3 class="header-3">სიახლეები</h3>
+        <h3 class="header-3">{{__('local.სიახლეები')}}</h3>
         <br>
 
         <div class="textFrame">
@@ -18,7 +18,7 @@
             <div class="textFrameBody">
                 <div class="row">
                     <div class="TFID col-md-4">
-                        <img class="TFI" src="img/enid.png">
+                        <img class="TFI" src="{{asset('img/enid.png')}}">
                     </div>
                     <div class="TFTD col-md-8">
                         <div class="TFTDD">
@@ -28,7 +28,7 @@
                                           natus numquam, omnis, sapiente unde.</span></label>
                             {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 1)}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 1])}}">სრულად</a> </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
@@ -47,7 +47,7 @@
             <div class="textFrameBody">
                 <div class="row">
                     <div class="TFID col-md-4">
-                        <img class="TFI" src="img/enid.png">
+                        <img class="TFI" src="{{asset('img/enid.png')}}">
                     </div>
                     <div class="TFTD col-md-8">
                        <div class="TFTDD">
@@ -55,9 +55,8 @@
                                           Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
                                           Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
                                           natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 2)}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 2])}}">სრულად</a> </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
@@ -76,7 +75,7 @@
             <div class="textFrameBody">
                 <div class="row">
                     <div class="TFID col-md-4">
-                        <img class="TFI" src="img/enid.png">
+                        <img class="TFI" src="{{asset('img/enid.png')}}">
                     </div>
                     <div class="TFTD col-md-8">
                         <div class="TFTDD">
@@ -84,9 +83,8 @@
                                           Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
                                           Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
                                           natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 3)}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 3])}}">სრულად</a> </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
@@ -105,7 +103,7 @@
             <div class="textFrameBody">
                 <div class="row">
                     <div class="TFID col-md-4">
-                        <img class="TFI" src="img/enid.png">
+                        <img class="TFI" src="{{asset('img/enid.png')}}">
                     </div>
                     <div class="TFTD col-md-8">
                         <div class="TFTDD">
@@ -113,9 +111,8 @@
                                           Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
                                           Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
                                           natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 4)}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 4])}}">სრულად</a> </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
@@ -134,7 +131,7 @@
             <div class="textFrameBody">
                 <div class="row">
                     <div class="TFID col-md-4">
-                        <img class="TFI" src="img/enid.png">
+                        <img class="TFI" src="{{asset('img/enid.png')}}">
                     </div>
                     <div class="TFTD col-md-8">
                         <div class="TFTDD">
@@ -142,9 +139,8 @@
                                           Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
                                           Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
                                           natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 5)}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 5])}}">სრულად</a> </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>

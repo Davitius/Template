@@ -15,7 +15,7 @@
 
         <div class="story">
             <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">ჩვენს შესახებ</label></div>
+                <div class="textFrameTitle col-md-9"><label class="TFTT">{{__('local.ჩვენს შესახებ')}}</label></div>
                 <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
             </div>
             <div class="storyBody">

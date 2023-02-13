@@ -10,28 +10,28 @@
 
 
     <div class="" style="min-height: 40em">
-        <h3 class="header-3">კონტაქტი</h3>
+        <h3 class="header-3">{{__('local.კონტაქტი')}}</h3>
         <br>
 
         <div class="contact">
             <div class="addressDiv">
                 <div class="address">
-                    <div class="addressTitle"><label class="">მისამართი</label></div>
+                    <div class="addressTitle"><label class="">{{__('local.მისამართი')}}</label></div>
                     <div class="addressBody"><label class="">ქ. თბილისი, ბლიყვირის ქ. №3</label></div>
                 </div>
                 <div class="address">
-                    <div class="addressTitle"><label class="">ტელეფონი</label></div>
+                    <div class="addressTitle"><label class="">{{__('local.ტელეფონი')}}</label></div>
                     <div class="addressBody"><label class="">577xxxxxx</label></div>
                 </div>
                 <div class="address">
-                    <div class="addressTitle"><label class="">ელ. ფოსტა</label></div>
+                    <div class="addressTitle"><label class="">{{__('local.ელ. ფოსტა')}}</label></div>
                     <div class="addressBody"><label class="">davitiusrealm@gmail.com</label></div>
                 </div>
             </div>
         </div>
 
 
-        <h3 class="header-3">ლოკაცია</h3>
+        <h3 class="header-3">{{__('local.ლოკაცია')}}</h3>
         <br>
 
         <div class="" id="map">

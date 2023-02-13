@@ -1,9 +1,13 @@
+<?php
+if(!isset($language)) {$language = 'ge';}
+//dd($language);
+?>
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>სკოლა</title>
+    <title>Template</title>
 
     <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
@@ -96,43 +100,37 @@
             <div class="navbar-collapse collapse" id="navbarsExample09">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="/">მთავარი</a>
+                        <a class="nav-link" aria-current="page" href="{{route('/lang', $language)}}">{{__('local.მთავარი')}}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{route('News')}}">სიახლეები</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ლინკი3</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">ლინკი4</a>
+                        <a class="nav-link" href="{{route('News', $language)}}">{{__('local.სიახლეები')}}</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">ჩვენს შესახებ</a>
+                        <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{__('local.ჩვენს შესახებ')}}</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="{{route('Contact')}}">კონტაქტი</a></li>
-                            <li><a class="dropdown-item" href="{{route('Ebout')}}">ჩვენს შესახებ</a></li>
-                            <li><a class="dropdown-item" href="#">სტრუქტურა</a></li>
+                            <li><a class="dropdown-item" href="{{route('Contact', $language)}}">{{__('local.კონტაქტი')}}</a></li>
+                            <li><a class="dropdown-item" href="{{route('Ebout', $language)}}">{{__('local.ჩვენს შესახებ')}}</a></li>
+{{--                            <li><a class="dropdown-item" href="#">სტრუქტურა</a></li>--}}
                         </ul>
                     </li>
 
 
                 </ul>
                 <form role="search" style="margin-right: 30px">
-                    <input class="form-control" type="search" placeholder="ძიება" aria-label="Search">
+                    <input class="form-control" type="search" placeholder="{{__('local.ძიება')}}" aria-label="Search">
                 </form>
 
                 <ul class="navbar-nav mb-2 mb-lg-0">
                     @if (Route::has('login'))
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"
-                               aria-expanded="false">@auth{{Auth::User()->name}}@elseმომხმარებელი@endauth</a>
+                               aria-expanded="false">@auth{{Auth::User()->name}}@else{{__('local.მომხმარებელი')}}@endauth</a>
                             <ul class="dropdown-menu">
                                 @auth
                                     <li><a class="dropdown-item" href="{{ route('logout') }}"
                                            onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                            {{ __('გასვლა') }}
+                                            {{__('local.გამოსვლა')}}
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST"
                                               class="d-none">
@@ -140,9 +138,9 @@
                                         </form>
                                     </li>
                                 @else
-                                    <li><a class="dropdown-item" href="{{ route('login') }}">შესვლა</a></li>
+                                    <li><a class="dropdown-item" href="{{ route('login') }}">{{__('local.შესვლა')}}</a></li>
                                     @if(Route::has('register'))
-                                        <li><a class="dropdown-item" href="{{ route('register') }}">რეგისტრაცია</a></li>
+                                        <li><a class="dropdown-item" href="{{ route('register') }}">{{__('local.რეგისტრაცია')}}</a></li>
                                     @endif
                                 @endauth
                             </ul>
@@ -154,9 +152,19 @@
                                 <img class="" style="width: 30px" src="{{asset('img/earth.png')}}">
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">ქართ</a></li>
-                                <li><a class="dropdown-item" href="#">Eng</a></li>
-                                <li><a class="dropdown-item" href="#">Рус</a></li>
+{{--                                <li><a class="dropdown-item" href="{{route('/lang', 'ge')}}">ქარ</a></li>--}}
+{{--                                <li><a class="dropdown-item" href="{{route('/lang', 'en')}}">Eng</a></li>--}}
+{{--                                <li><a class="dropdown-item" href="{{route('/lang', 'ru')}}">Рус</a></li>--}}
+
+                                <li><a class="dropdown-item" href="{{route('/lang', 'ge')}}">
+                                        <img class="w-25" src="{{asset('img/lang/ge.png')}}">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="{{route('/lang', 'en')}}">
+                                        <img class="w-25" src="{{asset('img/lang/en.png')}}">
+                                    </a></li>
+                                <li><a class="dropdown-item" href="{{route('/lang', 'ru')}}">
+                                        <img class="w-25" src="{{asset('img/lang/ru.png')}}">
+                                    </a></li>
                             </ul>
                         </li>
 

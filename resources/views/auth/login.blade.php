@@ -16,7 +16,7 @@
         <div class="carousel-inner">
 
             <div class="carousel-item">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
                 <div class="container">
                     <div class="carousel-caption text-start">
 
@@ -25,7 +25,7 @@
             </div>
 
             <div class="carousel-item">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
 
                 <div class="container">
                     <div class="carousel-caption">
@@ -35,7 +35,7 @@
             </div>
 
             <div class="carousel-item active">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
 
                 <div class="container">
                     <div class="carousel-caption text-end">
@@ -65,7 +65,6 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
-
                         <div class="row mb-3">
                             <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('ელ. ფოსტა') }}</label>
 

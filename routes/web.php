@@ -18,14 +18,14 @@ use Illuminate\Support\Facades\Route;
 //    return view('index');
 //});
 
-
 Route::get('/', 'App\Http\Controllers\IndexController@index')->name('/');
+Route::get('/{language}/welcome', 'App\Http\Controllers\IndexLangController@index')->name('/lang');
 
-Route::get('/news', 'App\Http\Controllers\News\NewsController@index')->name('News');
-Route::get('/news/details/{news_id}', 'App\Http\Controllers\News\NewsDetailsController@index')->name('NewsDetails');
+Route::get('/{langnews}/news', 'App\Http\Controllers\News\NewsController@index')->name('News');
+Route::get('/{langnew}/news/{newid}/details', 'App\Http\Controllers\News\NewsDetailsController@index')->name('NewsDetails');
 
-Route::get('/contact', 'App\Http\Controllers\Ebout\ContactController@index')->name('Contact');
-Route::get('/ebout', 'App\Http\Controllers\Ebout\EboutController@index')->name('Ebout');
+Route::get('/{lang}/contact', 'App\Http\Controllers\Ebout\ContactController@index')->name('Contact');
+Route::get('/{langebout}/ebout', 'App\Http\Controllers\Ebout\EboutController@index')->name('Ebout');
 
 
 

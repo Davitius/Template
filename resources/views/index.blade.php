@@ -19,7 +19,7 @@
         <div class="carousel-inner">
 
             <div class="carousel-item">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
                 <div class="container">
                     <div class="carousel-caption text-start">
 
@@ -28,7 +28,7 @@
             </div>
 
             <div class="carousel-item">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
 
                 <div class="container">
                     <div class="carousel-caption">
@@ -38,7 +38,7 @@
             </div>
 
             <div class="carousel-item active">
-                <img class="" src="img/enid.png" style="width: 100%">
+                <img class="" src="{{asset('img/enid.png')}}" style="width: 100%">
 
                 <div class="container">
                     <div class="carousel-caption text-end">
@@ -61,38 +61,11 @@
 
 
     <div class="" style="min-height: 40em">
-        <h3 class="header-3">ჩვენს შესახებ</h3>
+        <h3 class="header-3">{{__('local.თქვენი სასურველი თემა')}}</h3>
         <br>
 
 
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                        <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
-                            <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', 1)}}">სრულად</a> </div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+
 
 
     </div>
