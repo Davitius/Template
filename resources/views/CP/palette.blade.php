@@ -49,10 +49,10 @@
                                 <label class="form-control">{{__('local.ფერი')}}</label>
                                 <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$background['color']}}"></span>
+                                              style="background: {{$array[0]['color']}}"></span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="color"
-                                           id="" value="{{$background['color']}}">
+                                           id="" value="{{$array[0]['color']}}">
                                 </div>
                             </div>
                             <div class="row">
@@ -83,26 +83,26 @@
                                 <label class="form-control">{{__('local.ფონი')}}</label>
                                 <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$menu['background']}}"></span>
+                                              style="background: {{$array[7]['background']}}"></span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="backcolor"
-                                           id="" value="{{$menu['background']}}">
+                                           id="" value="{{$array[7]['background']}}">
                                 </div>
                                 <label class="form-control">{{__('local.ტექსტის ფერი')}}</label>
                                 <div class="input-group mb-3">
                                                                         <span class="input-group-text" id="basic-addon1"
-                                                                              style="background: {{$menu['color']}}"></span>
+                                                                              style="background: {{$array[7]['color']}}"></span>
                                     <input type="text" class="form-control" placeholder="დასახელება"
                                            aria-label="Username" aria-describedby="basic-addon1" name="color" id=""
-                                           value="{{$menu['color']}}">
+                                           value="{{$array[7]['color']}}">
                                 </div>
                                 <label class="form-control">{{__('local.ტექსტი ჰოვერით')}}</label>
                                 <div class="input-group mb-3">
                                                                         <span class="input-group-text" id="basic-addon1"
-                                                                              style="background: {{$menu['hovercolor']}}"></span>
+                                                                              style="background: {{$array[7]['hovercolor']}}"></span>
                                     <input type="text" class="form-control" placeholder="დასახელება"
                                            aria-label="Username" aria-describedby="basic-addon1" name="hovercolor" id=""
-                                           value="{{$menu['hovercolor']}}">
+                                           value="{{$array[7]['hovercolor']}}">
                                 </div>
                             </div>
                             </div>
@@ -135,42 +135,42 @@
                                         <span class="input-group-text" id="basic-addon1">GE</span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="title_GE"
-                                           id="" value="{{$usefullinks['title_GE']}}">
+                                           id="" value="{{$array[8]['title_GE']}}">
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">EN</span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="title_EN"
-                                           id="" value="{{$usefullinks['title_EN']}}">
+                                           id="" value="{{$array[8]['title_EN']}}">
                                 </div>
                                 <div class="input-group mb-3">
                                     <span class="input-group-text" id="basic-addon1">RU</span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="title_RU"
-                                           id="" value="{{$usefullinks['title_RU']}}">
+                                           id="" value="{{$array[8]['title_RU']}}">
                                 </div>
                                 <label class="form-control">{{__('local.ფონი')}}</label>
                                 <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$usefullinks['background']}}"></span>
+                                              style="background: {{$array[8]['background']}}"></span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="backcolor"
-                                           id="" value="{{$usefullinks['background']}}">
+                                           id="" value="{{$array[8]['background']}}">
                                 </div>
 
                                 <label class="form-control">{{__('local.სათაურის ფერი')}}</label>
                                 <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$usefullinks['color']}}"></span>
+                                              style="background: {{$array[8]['color']}}"></span>
                                     <input type="text" class="form-control" placeholder=""
                                            aria-label="Username" aria-describedby="basic-addon1" name="color"
-                                           id="" value="{{$usefullinks['color']}}">
+                                           id="" value="{{$array[8]['color']}}">
                                 </div>
 
                                 <label class="form-control">{{__('local.სათაურის ზომა')}}</label>
                                 <div class="input-group mb-3">
                                     <select class="form-control" name="size" id="">
-                                        <option class="" value="{{$usefullinks['size']}}">{{$usefullinks['size']}}</option>
+                                        <option class="" value="{{$array[8]['size']}}">{{$array[8]['size']}}</option>
                                         <option class="" value="10px">10px</option>
                                         <option class="" value="12px">12px</option>
                                         <option class="" value="14px">14px</option>
@@ -187,7 +187,7 @@
                                 <div class="w-50">
                                     <label class="form-control">{{__('local.აქტიური')}}</label>
                                     <input class="ChangeButton" type="checkbox" value="block" name="visible" id=""
-                                           style="margin-top: 15px" @if($usefullinks['visible'] == 'block') checked @endif>
+                                           style="margin-top: 15px" @if($array[8]['visible'] == 'block') checked @endif>
                                 </div>
                                 <div class="w-50 text-end mt-3">
                                     <button class="btn btn-outline-success"
@@ -214,42 +214,42 @@
                                         <span class="input-group-text" id="basic-addon1">GE</span>
                                         <input type="text" class="form-control" placeholder=""
                                                aria-label="Username" aria-describedby="basic-addon1" name="title_GE"
-                                               id="" value="{{$usefullinks2['title_GE']}}">
+                                               id="" value="{{$array[9]['title_GE']}}">
                                     </div>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">EN</span>
                                         <input type="text" class="form-control" placeholder=""
                                                aria-label="Username" aria-describedby="basic-addon1" name="title_EN"
-                                               id="" value="{{$usefullinks2['title_EN']}}">
+                                               id="" value="{{$array[9]['title_EN']}}">
                                     </div>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1">RU</span>
                                         <input type="text" class="form-control" placeholder=""
                                                aria-label="Username" aria-describedby="basic-addon1" name="title_RU"
-                                               id="" value="{{$usefullinks2['title_RU']}}">
+                                               id="" value="{{$array[9]['title_RU']}}">
                                     </div>
                                     <label class="form-control">{{__('local.ფონი')}}</label>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$usefullinks2['background']}}"></span>
+                                              style="background: {{$array[9]['background']}}"></span>
                                         <input type="text" class="form-control" placeholder=""
                                                aria-label="Username" aria-describedby="basic-addon1" name="backcolor"
-                                               id="" value="{{$usefullinks2['background']}}">
+                                               id="" value="{{$array[9]['background']}}">
                                     </div>
 
                                     <label class="form-control">{{__('local.სათაურის ფერი')}}</label>
                                     <div class="input-group mb-3">
                                         <span class="input-group-text" id="basic-addon1"
-                                              style="background: {{$usefullinks2['color']}}"></span>
+                                              style="background: {{$array[9]['color']}}"></span>
                                         <input type="text" class="form-control" placeholder=""
                                                aria-label="Username" aria-describedby="basic-addon1" name="color"
-                                               id="" value="{{$usefullinks2['color']}}">
+                                               id="" value="{{$array[9]['color']}}">
                                     </div>
 
                                     <label class="form-control">{{__('local.სათაურის ზომა')}}</label>
                                     <div class="input-group mb-3">
                                         <select class="form-control" name="size" id="">
-                                            <option class="" value="{{$usefullinks2['size']}}">{{$usefullinks2['size']}}</option>
+                                            <option class="" value="{{$array[9]['size']}}">{{$array[9]['size']}}</option>
                                             <option class="" value="10px">10px</option>
                                             <option class="" value="12px">12px</option>
                                             <option class="" value="14px">14px</option>
@@ -266,7 +266,7 @@
                                 <div class="w-50">
                                     <label class="form-control">{{__('local.აქტიური')}}</label>
                                     <input class="ChangeButton" type="checkbox" value="block" name="visible" id=""
-                                           style="margin-top: 15px" @if($usefullinks2['visible'] == 'block') checked @endif>
+                                           style="margin-top: 15px" @if($array[9]['visible'] == 'block') checked @endif>
                                 </div>
                                 <div class="w-50 text-end mt-3">
                                     <button class="btn btn-outline-success"
@@ -289,11 +289,11 @@
                 @for($i = 1; $i < 7; $i++)
                     <?php
                     $block = 'block' . $i;
-                        $blockBG = $$block['background'];
-                        $blockColor = $$block['color'];
-                        $blockSize = $$block['size'];
-                        $titlePosition = $$block['position'];
-                        $blockVisible = $$block['visible'];
+                        $blockBG = $array[$i]['background'];
+                        $blockColor = $array[$i]['color'];
+                        $blockSize = $array[$i]['size'];
+                        $titlePosition = $array[$i]['position'];
+                        $blockVisible = $array[$i]['visible'];
                     ?>
                     <div class="col-md-4 mb-4">
                         <form method="post" action="{{route('BlockUpdate', [$language, $i])}}">

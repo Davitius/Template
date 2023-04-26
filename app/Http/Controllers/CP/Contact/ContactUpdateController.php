@@ -11,11 +11,8 @@ class ContactUpdateController extends Controller
 {
     public function update(ContaqtUpdateRequest $request, $language) {
         $data = $request->validated();
-
         $contact = Contact::find(1);
-
         $contact->update($data);
-//dd($language);
 
         return redirect()->route('CpContact', $language);
     }
