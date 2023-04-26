@@ -17,15 +17,20 @@
             <div class="addressDiv">
                 <div class="address">
                     <div class="addressTitle"><label class="">{{__('local.მისამართი')}}</label></div>
-                    <div class="addressBody"><label class="">ქ. თბილისი, ბლიყვირის ქ. №3</label></div>
+                    <?Php
+                    $Address = 'address_' . strtoupper($language);
+                    $Name = 'name_' . strtoupper($language);
+//                    dd($address);
+                    ?>
+                    <div class="addressBody"><label class="">{{$address->$Address}}</label></div>
                 </div>
                 <div class="address">
                     <div class="addressTitle"><label class="">{{__('local.ტელეფონი')}}</label></div>
-                    <div class="addressBody"><label class="">577xxxxxx</label></div>
+                    <div class="addressBody"><label class="">{{$address->phone}}</label></div>
                 </div>
                 <div class="address">
                     <div class="addressTitle"><label class="">{{__('local.ელ. ფოსტა')}}</label></div>
-                    <div class="addressBody"><label class="">davitiusrealm@gmail.com</label></div>
+                    <div class="addressBody"><label class="">{{$address->email}}</label></div>
                 </div>
             </div>
         </div>
@@ -46,10 +51,10 @@
         let map;
 
         function initMap() {
-            var pos = {lat: 41.73966, lng: 44.80016 };
+            var pos = {lat: {{$location->latitude}}, lng: {{$location->longitude}} };
             var opt = {
                 center: pos,
-                zoom: 14,
+                zoom: 15,
             };
             var myMap = new google.maps.Map(document.getElementById("map"), opt);
             var marker = new google.maps.Marker({
@@ -59,7 +64,7 @@
                 // icon: '',
             });
             var info = new google.maps.InfoWindow({
-                content: '<h3>დასახელება</h3>'
+                content: '<h3>{{$location->$Name}}</h3>'
             });
             marker.addListener("click", function () {
                 info.open(myMap, marker);

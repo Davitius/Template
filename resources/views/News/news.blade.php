@@ -1,34 +1,35 @@
 @extends('layouts.main')
 
-
-{{--@yield('layouts.ff_slider')--}}
-
-
 @section('content')
 
     <div class="" style="min-height: 40em">
         <h3 class="header-3">{{__('local.სიახლეები')}}</h3>
         <br>
-
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                        <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            {{--                        <div class="textFBTND"><button type="button" class="btn btn-outline-success">სრულად >>></button></div>--}}
+        @foreach($news as $new)
+            <div class="textFrame">
+                <div class="row mb-3">
+                    <?php $title = 'title_' . $language; ?>
+                    <div class="textFrameTitle col-md-9"><label class="TFTT">{{$new->$title}}</label></div>
+                    <div class="textFrameDate col-md-3"><label class="TFTDate">{{$new->created_at}}</label></div>
+                </div>
+                <div class="textFrameBody">
+                    <div class="row">
+                        <div class="TFID col-md-4">
+                            @if($new->image != '')
+                                <img class="TFI" src="../../storage/{{$new->image}}">
+                            @else
+                                <img class="TFI" src="{{asset('img/unnamed.png')}}">
+                            @endif
+                        </div>
+                        <div class="TFTD col-md-8">
+                            <div class="TFTDD" style="height: 9em; overflow-y: hidden">
+                                <?php $text = 'text_' . $language; ?>
+                                {!! $new->$text !!}
+                            </div>
                             <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 1])}}">სრულად</a> </div>
+                                <div class=""><a class="seeMoreArr"
+                                                 href="{{route('NewsDetails', [$language, $new->id])}}">{{__('local.სრულად')}}</a>
+                                </div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
                                 <div class="arrow"></div>
@@ -37,120 +38,12 @@
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
 
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                       <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 2])}}">სრულად</a> </div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        {{--  Pagination Buttons  --}}
+        <div class="PaginBtn mt-3 d-flex justify-content-center">
+            <label class="">{{ $news->links() }}</label>
         </div>
-
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                        <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 3])}}">სრულად</a> </div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                        <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 4])}}">სრულად</a> </div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="textFrame">
-            <div class="row mb-3">
-                <div class="textFrameTitle col-md-9"><label class="TFTT">სათაური</label></div>
-                <div class="textFrameDate col-md-3"><label class="TFTDate">14/03/2023</label></div>
-            </div>
-            <div class="textFrameBody">
-                <div class="row">
-                    <div class="TFID col-md-4">
-                        <img class="TFI" src="{{asset('img/enid.png')}}">
-                    </div>
-                    <div class="TFTD col-md-8">
-                        <div class="TFTDD">
-                            <label class="text"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                          Autem culpa facilis natus perferendis perspiciatis repellat veritatis.
-                                          Aliquam cum dolorem dolorum harum ipsam magni maxime mollitia,
-                                          natus numquam, omnis, sapiente unde.</span></label>
-                            <div class="arrow-body">
-                                <div class=""><a class="seeMoreArr" href="{{route('NewsDetails', [$language, 5])}}">სრულად</a> </div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                                <div class="arrow"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
 
 @endsection

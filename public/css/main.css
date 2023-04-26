@@ -5,9 +5,40 @@
     transition: 0.4s;
 }
 
+
+/*Errors*/
+#ErrorsDiv {
+    /*padding-left: 20px;*/
+    text-align: start;
+}
+
+/*პაგინაცია*/
+.paginateDiv {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+/*შაპკა-ლოგო*/
+.Header_Logo {
+    margin-bottom: 20px;
+}
+.headerLogoImg {
+    width: 100%;
+    border-radius: 6px;
+}
+
+
 /*სათაური*/
 .header-3 {
     color: #505050;
+}
+
+
+/*ფოტო-კარუსელი*/
+.carousel-inner {
+    border-radius: 6px;
 }
 
 
@@ -61,6 +92,7 @@
 
 .TFID {
     padding: 0 10px 10px 10px;
+
 }
 .TFTD {
     border-radius: 10px;
@@ -74,6 +106,8 @@
 .TFI {
     width: 100%;
     border-radius: 10px;
+    height: 9em;
+    overflow-y: hidden;
 }
 
 .textFrameBody {
@@ -97,15 +131,7 @@
 
 
 
-/*საჭირო ბმულები*/
-.usefullLinks {
-    text-align: center;
-    color: white;
-    font-weight: bold;
-    background: #29395a;
-    min-height: 200px;
-    padding: 20px 0 20px 0;
-}
+
 
 
 
@@ -218,3 +244,57 @@
     text-align: left;
     border: 2px solid navajowhite;
 }
+
+
+
+.usefullLinks {
+    border-radius: 6px;
+}
+
+
+
+
+/*ადმინკა*/
+
+/*პალიტრა*/
+.colorshow {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.CpHID {
+    display: flex;
+    flex-direction: row;
+}
+.CpHI {
+    width: 25%;
+    border-radius: 6px;
+}
+
+
+/*სურათები კონტროლპანელი*/
+
+.CpHeaderLogoImg {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 1em;
+    margin-top: 0.8em;
+}
+.CpUlImg {
+    width: 65px;
+    border-radius: 6px;
+}
+.CpUlImg:hover {
+    width: 100%;
+}
+
+
+/*Footer*/
+
+.socialIcons:hover {
+    transform: translateY(-15px);
+}
+
+
+
+
