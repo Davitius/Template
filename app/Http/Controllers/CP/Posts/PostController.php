@@ -18,26 +18,14 @@ class PostController extends Controller
         App::setlocale($language);
 
         //        პალიტრა
-        $B = palette::find(1);
-        $M = palette::find(2);
-        $background = ['color' => $B->color];
-        $menu = ['background' => $M->backcolor, 'color' => $M->color, 'hovercolor' => $M->hovercolor];
-        $header = Constructor::find(1);
-        $footerWords = DB::table('constructors')->where('id', '>', '4')->
-        where('id', '<', '11')->get();
-        $socialIcons = DB::table('constructors')->where('id', '>', '10')->
-        where('id', '<', '15')->get();
-
+        $array = $this->palette();
 
         $topics = DB::table('topics')->where('active', 'on')->paginate(10);
-        $posts = DB::table('posts')->
-        orderBy('created_at', 'DESC')->paginate(10);
-
+        $posts = DB::table('posts')->orderBy('created_at', 'DESC')->paginate(10);
         $Type = '';
 
 
-        return view('CP.Posts.post', compact('language', 'background', 'menu', 'header', 'footerWords', 'socialIcons',
-            'topics', 'posts', 'Type'));
+        return view('CP.Posts.post', compact('language', 'array', 'topics', 'posts', 'Type'));
     }
 
 }

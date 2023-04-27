@@ -41,28 +41,29 @@ if (!isset($language)) {
 
     <style>
         body {
-            background: {{$background['color']}};
+            background: {{$array[0]['color']}};
+
         }
 
         /*მენიუ*/
         .navbar {
             margin-bottom: 20px;
-            background: {{$menu['background']}};
-            color: {{$menu['color']}};
+            background: {{$array[7]['background']}};
+            color: {{$array[7]['color']}};
         }
 
         .dropdown-menu {
-            background: {{$menu['background']}};
+            background: {{$array[7]['background']}};
             opacity: 0.8;
         }
 
         .nav-link, .dropdown-item {
-            color: {{$menu['color']}};
+            color: {{$array[7]['color']}};
         }
 
         .nav-link:hover, .dropdown-item:hover {
-            color: {{$menu['hovercolor']}};
-            background: {{$menu['background']}};
+            color: {{$array[7]['hovercolor']}};
+            background: {{$array[7]['background']}};
         }
 
         .nav-item {
@@ -70,12 +71,12 @@ if (!isset($language)) {
         }
 
         .earthicon {
-            color: {{$menu['color']}};
+            color: {{$array[7]['color']}};
             font-size: 30px;
         }
 
         .earthicon:hover {
-            color: {{$menu['hovercolor']}};
+            color: {{$array[7]['hovercolor']}};
         }
 
         /*მარჯვენა ბლოკები*/
@@ -92,23 +93,23 @@ if (!isset($language)) {
 
         /*საჭირო ბმულები*/
         .usefullLinks {
-            background: {{$usefullinks['background']}};
-            color: {{$usefullinks['color']}};
+            background: {{$array[8]['background']}};
+            color: {{$array[8]['color']}};
             text-align: center;
             font-weight: bold;
             min-height: 200px;
             padding: 20px 0 20px 0;
-            display: {{$usefullinks['visible']}};
+            display: {{$array[8]['visible']}};
         }
 
         .usefultext {
-            color: {{$usefullinks['color']}};
-            font-size: {{$usefullinks['size']}};
+            color: {{$array[8]['color']}};
+            font-size: {{$array[8]['size']}};
         }
 
         .usefultext2 {
-            color: {{$usefullinks2['color']}};
-            font-size: {{$usefullinks2['size']}};
+            color: {{$array[9]['color']}};
+            font-size: {{$array[9]['size']}};
             display: block;
             margin-bottom: 1.5em;
             font-weight: bold;
@@ -121,11 +122,11 @@ if (!isset($language)) {
 <div class="container min-vh-100" style="padding: 20px; background: white">
 
     {{--  სტატიკური სურათი  --}}
-    <div class="Header_Logo" @if($header->visible == 'block') style="display: block" @else style="display: none" @endif>
-        <img class="headerLogoImg" src="../../../storage/{{$header->image}}">
+    <div class="Header_Logo" @if($array[10]->visible == 'block') style="display: block" @else style="display: none" @endif>
+        <img class="headerLogoImg" src="../../../storage/{{$array[10]->image}}">
     </div>
     <!--                 Header ფოტო კარუსელი-->
-    <div class="Header_Logo" @if($header->visible != 'block') style="display: block" @else style="display: none" @endif>
+    <div class="Header_Logo" @if($array[10]->visible != 'block') style="display: block" @else style="display: none" @endif>
         <div id="myCarousel" class="carousel slide mb-3" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class=""
@@ -138,7 +139,7 @@ if (!isset($language)) {
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item">
-                    <img class="" src="../../../storage/{{$sliders[0]}}" style="width: 100%">
+                    <img class="" src="../../../storage/{{$array[11][0]}}" style="width: 100%">
                     <div class="container">
                         <div class="carousel-caption text-start">
 
@@ -146,7 +147,7 @@ if (!isset($language)) {
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img class="" src="../../../storage/{{$sliders[1]}}" style="width: 100%">
+                    <img class="" src="../../../storage/{{$array[11][1]}}" style="width: 100%">
 
                     <div class="container">
                         <div class="carousel-caption">
@@ -155,7 +156,7 @@ if (!isset($language)) {
                     </div>
                 </div>
                 <div class="carousel-item active">
-                    <img class="" src="../../../storage/{{$sliders[2]}}" style="width: 100%">
+                    <img class="" src="../../../storage/{{$array[11][2]}}" style="width: 100%">
 
                     <div class="container">
                         <div class="carousel-caption text-end">
@@ -200,7 +201,7 @@ if (!isset($language)) {
                             <li><a class="dropdown-item"
                                    href="{{route('Contact', $language)}}">{{__('local.კონტაქტი')}}</a></li>
                             <li><a class="dropdown-item"
-                                   href="{{route('Ebout', $language)}}">{{__('local.ჩვენს შესახებ')}}</a></li>
+                                   href="{{route('About', $language)}}">{{__('local.ჩვენს შესახებ')}}</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -276,7 +277,7 @@ if (!isset($language)) {
         {{--    ბლოკები მარჯვენა    --}}
         <div class="RC col-md-4 min-vh-100" style="border-radius: 5px;">
             <?php $B = 0; ?>
-            @foreach($Blocks as $block)
+            @foreach($array[16] as $block)
                 <?php
                 $B++;
                 $blocktitle = 'title_' . $language;
@@ -290,15 +291,15 @@ if (!isset($language)) {
                         border-radius: 6px;
                         margin-bottom: 20px;
                         padding: 10px;
-                        background: {{$$blokNumber['background']}};
-                        color: {{$$blokNumber['color']}};
-                        display: {{$$blokNumber['visible']}};
-                        text-align: {{$$blokNumber['position']}};
+                        background: {{$array[$B]['background']}};
+                        color: {{$array[$B]['color']}};
+                        display: {{$array[$B]['visible']}};
+                        text-align: {{$array[$B]['position']}};
                     }
                 </style>
                 <div class="RB-{{$B}}">
                     <label class="RBT-{{$B}}"
-                           style="font-size: {{$$blokNumber['size']}}">{{$block->$blocktitle}}</label>
+                           style="font-size: {{$array[$B]['size']}}">{{$block->$blocktitle}}</label>
                     <div class="RB-text-Div" id="RB-text-Div-{{$B}}">
                         {!! $block->$blocktext !!}
                     </div>
@@ -311,15 +312,15 @@ if (!isset($language)) {
 
     {{--  Carousel2  --}}
 
-    <section class="product mb-5" style="background: {{$usefullinks2['background']}}; display: {{$usefullinks2['visible']}}">
+    <section class="product mb-5" style="background: {{$array[9]['background']}}; display: {{$array[9]['visible']}}">
         <?php $carousel2title = 'title_' . strtoupper($language); ?>
         <label class="usefultext2">
-            {{$usefullinks2[$carousel2title]}}
+            {{$array[9][$carousel2title]}}
         </label>
         <button class="pre-btn"><img src="{{asset('img/arrow.png')}}" alt=""></button>
         <button class="nxt-btn"><img src="{{asset('img/arrow.png')}}" alt=""></button>
         <div class="product-container">
-            @foreach($ULImages2 as $ULImage2)
+            @foreach($array[15] as $ULImage2)
                 <div class="product-card">
                     <div class="product-image">
                         <?php $carousel2imagename = 'name_' . strtoupper($language); ?>
@@ -339,12 +340,12 @@ if (!isset($language)) {
     <div class="usefullLinks">
         <?php $carousel1title = 'title_' . strtoupper($language); ?>
         <label class="usefultext">
-            {{$usefullinks[$carousel1title]}}
+            {{$array[8][$carousel1title]}}
         </label>
         <div class="slide-container swiper">
             <div class="slide-content">
                 <div class="card-wrapper swiper-wrapper">
-                    @foreach($ULImages as $ULImage)
+                    @foreach($array[14] as $ULImage)
                         <div class="card swiper-slide">
                             <div class="image-content">
                                 <div class="card-image">
@@ -370,7 +371,7 @@ if (!isset($language)) {
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center pt-5 p-1 my-5 border-top"
             style="border-radius: 6px;">
-        @foreach($socialIcons as $socialIcon)
+        @foreach($array[13] as $socialIcon)
             <a href="{{$socialIcon->link}}"
                class="socialIcons col-md-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                 <i class="{{$socialIcon->icon}}"
@@ -378,7 +379,7 @@ if (!isset($language)) {
             </a>
         @endforeach
         <ul class="nav col-md-6 justify-content-end">
-            @foreach($footerWords as $footerWord)
+            @foreach($array[12] as $footerWord)
                 <?php $footername = 'name_' . strtoupper($language); ?>
                 <li class="nav-item" style="display: {{$footerWord->visible}}"><a href="{{$footerWord->link}}"
                                                                                   class="nav-link px-2 text-muted">{{$footerWord->$footername}}</a>

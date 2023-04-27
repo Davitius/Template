@@ -17,18 +17,8 @@ class CpController extends Controller
         App::setlocale($language);
 
         //        პალიტრა
-        $B = palette::find(1);
-        $M = palette::find(2);
+        $array = $this->palette();
 
-        $background = ['color' => $B->color];
-        $menu = ['background' => $M->backcolor, 'color' => $M->color, 'hovercolor' => $M->hovercolor];
-
-        $header = Constructor::find(1);
-
-        $footerWords = DB::table('constructors')->where('id', '>', '4')->where('id', '<', '11')->get();
-        $socialIcons = DB::table('constructors')->where('id', '>', '10')->where('id', '<', '15')->get();
-
-
-        return view('CP.panel', compact('language', 'background', 'menu', 'header', 'footerWords', 'socialIcons'));
+        return view('CP.panel', compact('language', 'array'));
     }
 }

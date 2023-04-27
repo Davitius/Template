@@ -21,6 +21,15 @@
         <br>
 
         <div class="col-md-8 mb-3 mx-auto">
+            @if($type == '')
+                <div class="alert alert-danger" role="alert" id="ErrorsDiv">
+                <ul>
+                    <li>
+                        თქვენ არ აგირჩევიათ ტიპი, დაბრუნდით უკან და აირჩიეთ ტიპი.
+                    </li>
+                </ul>
+                </div>
+            @endif
             @if($errors->any())
                 <div class="alert alert-danger" role="alert" id="ErrorsDiv">
                     <ul>

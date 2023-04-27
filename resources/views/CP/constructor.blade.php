@@ -42,13 +42,13 @@
                 <div class="d-flex justify-content-between">
                     <div class="col-md-6 mb-3">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault1" value="block" @if($header->visible == 'block') checked @endif>
+                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault1" value="block" @if($array[10]->visible == 'block') checked @endif>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 {{__('local.სტატიკური ფოტო')}}
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault2" value="none" @if($header->visible != 'block') checked @endif>
+                            <input class="form-check-input" type="radio" name="visible" id="flexRadioDefault2" value="none" @if($array[10]->visible != 'block') checked @endif>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 {{__('local.სლაიდერი')}}
                             </label>
@@ -61,7 +61,7 @@
                 </form>
             </div>
 
-            <div class="" @if($header->visible == 'block') style="display: block" @else style="display: none" @endif>
+            <div class="" @if($array[10]->visible == 'block') style="display: block" @else style="display: none" @endif>
             <form method="post" action="{{route('HeaderUpdate', $language)}}" enctype="multipart/form-data">
                 @csrf
                 @method('patch')
@@ -70,7 +70,7 @@
 
                     <div class="col-md-12 mb-1">
                         <div class="">
-                            <img class="CpHeaderLogoImg" src="../../storage/{{$header->image}}">
+                            <img class="CpHeaderLogoImg" src="../../storage/{{$array[10]->image}}">
                         </div>
                     </div>
 
@@ -89,7 +89,7 @@
 
 
 
-<div class="" @if($header->visible != 'block') style="display: block" @else style="display: none" @endif>
+<div class="" @if($array[10]->visible != 'block') style="display: block" @else style="display: none" @endif>
             <div class="row">
                 @foreach($sliders as $slider)
                     <div class="col-md-4 mb-5">
@@ -245,7 +245,7 @@
                 </div>
 
                 <div class="row">
-                    @foreach($footerWords as $footerWord)
+                    @foreach($array[12] as $footerWord)
                         <div class="col-md-4 mb-4">
                             <form method="post" action="{{route('FooterWordUpdate', [$language, $footerWord->id])}}">
                                 @csrf
@@ -315,7 +315,7 @@
                 </div>
                 <div class="row">
 
-                    @foreach($socialIcons as $socialIcon)
+                    @foreach($array[13] as $socialIcon)
                         <div class="col-md-3 mb-3">
                             <form method="post" action="{{route('FooterIconUpdate', [$language, $socialIcon->id])}}">
                                 @csrf

@@ -81,8 +81,8 @@ Route::get('/{langCP}/search', 'App\Http\Controllers\Search\SearchController@sea
 Route::get('/{langnews}/news', 'App\Http\Controllers\News\NewsController@index')->name('News');
 Route::get('/{langnew}/news/details/{newid}', 'App\Http\Controllers\News\NewsDetailsController@index')->name('NewsDetails');
 
-Route::get('/{lang}/contact', 'App\Http\Controllers\Ebout\ContactController@index')->name('Contact');
-Route::get('/{langebout}/ebout', 'App\Http\Controllers\Ebout\EboutController@index')->name('Ebout');
+Route::get('/{lang}/contact', 'App\Http\Controllers\About\ContactController@index')->name('Contact');
+Route::get('/{langabout}/about', 'App\Http\Controllers\About\AboutController@index')->name('About');
 
 
 

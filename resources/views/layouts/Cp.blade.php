@@ -33,24 +33,24 @@ if (!isset($language)) {
 
     <style>
         body {
-            background: {{$background['color']}};
+            background: {{$array[0]['color']}};
         }
         /*მენიუ*/
         .navbar {
             margin-bottom: 20px;
-            background: {{$menu['background']}};
-            color: {{$menu['color']}};
+            background: {{$array[7]['background']}};
+            color: {{$array[7]['color']}};
         }
         .dropdown-menu {
-            background:  {{$menu['background']}};
+            background:  {{$array[7]['background']}};
             opacity: 0.8;
         }
         .nav-link, .dropdown-item {
-            color: {{$menu['color']}};
+            color: {{$array[7]['color']}};
         }
         .nav-link:hover, .dropdown-item:hover {
-            color: {{$menu['hovercolor']}};
-            background:  {{$menu['background']}};
+            color: {{$array[7]['hovercolor']}};
+            background:  {{$array[7]['background']}};
         }
         .nav-item{
             margin-right: 1em;
@@ -85,7 +85,7 @@ if (!isset($language)) {
                             <li><a class="dropdown-item"
                                    href="{{route('News', $language)}}">{{__('local.სიახლეები')}}</a></li>
                             <li><a class="dropdown-item"
-                                   href="{{route('Ebout', $language)}}">{{__('local.ჩვენს შესახებ')}}</a></li>
+                                   href="{{route('About', $language)}}">{{__('local.ჩვენს შესახებ')}}</a></li>
                             <li><a class="dropdown-item"
                                    href="{{route('Contact', $language)}}">{{__('local.კონტაქტი')}}</a></li>
                         </ul>
@@ -169,7 +169,7 @@ if (!isset($language)) {
 
     <footer class="d-flex flex-wrap justify-content-between align-items-center pt-5 p-1 my-5 border-top"
             style="border-radius: 6px;">
-        @foreach($socialIcons as $socialIcon)
+        @foreach($array[13] as $socialIcon)
             <a href="{{$socialIcon->link}}"
                class="socialIcons col-md-1 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
                 <i class="{{$socialIcon->icon}}" style="color: {{$socialIcon->color}}; font-size: 50px; display: {{$socialIcon->visible}}"></i>
@@ -177,17 +177,17 @@ if (!isset($language)) {
         @endforeach
         <ul class="nav col-md-6 justify-content-end">
             @if($language == 'ge')
-            @foreach($footerWords as $footerWord)
+            @foreach($array[12] as $footerWord)
             <li class="nav-item" style="display: {{$footerWord->visible}}"><a href="{{$footerWord->link}}" class="nav-link px-2 text-muted">{{$footerWord->name_GE}}</a></li>
             @endforeach
             @endif
                 @if($language == 'en')
-                    @foreach($footerWords as $footerWord)
+                    @foreach($array[12] as $footerWord)
                         <li class="nav-item"><a href="{{$footerWord->link}}" class="nav-link px-2 text-muted">{{$footerWord->name_EN}}</a></li>
                     @endforeach
                 @endif
                 @if($language == 'ru')
-                    @foreach($footerWords as $footerWord)
+                    @foreach($array[12] as $footerWord)
                         <li class="nav-item"><a href="{{$footerWord->link}}" class="nav-link px-2 text-muted">{{$footerWord->name_RU}}</a></li>
                     @endforeach
                 @endif

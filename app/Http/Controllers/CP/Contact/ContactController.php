@@ -17,21 +17,11 @@ class ContactController extends Controller
         App::setlocale($language);
 
         //        პალიტრა
-        $B = palette::find(1);
-        $M = palette::find(2);
-        $background = ['color' => $B->color];
-        $menu = ['background' => $M->backcolor, 'color' => $M->color, 'hovercolor' => $M->hovercolor];
-        $header = Constructor::find(1);
-        $footerWords = DB::table('constructors')->where('id', '>', '4')->where('id', '<', '11')->get();
-        $socialIcons = DB::table('constructors')->where('id', '>', '10')->where('id', '<', '15')->get();
-
+        $array = $this->palette();
 
         $address = Contact::find(1);
         $location = Contact::find(2);
 
-
-
-
-        return view('CP.contact', compact('language', 'background', 'menu', 'header', 'footerWords', 'socialIcons', 'address', 'location'));
+        return view('CP.contact', compact('language', 'array', 'address', 'location'));
     }
 }
