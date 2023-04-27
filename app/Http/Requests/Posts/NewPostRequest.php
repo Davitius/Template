@@ -31,7 +31,7 @@ class NewPostRequest extends FormRequest
             'text_ge' => ['string', 'required'],
             'text_en' => ['string', 'required'],
             'text_ru' => ['string', 'required'],
-            'type' => ['string', 'required'],
+            'type' => ['required'],
         ];
     }
 
@@ -39,6 +39,7 @@ class NewPostRequest extends FormRequest
     {
         return [
             'color.require' => 'ველის შევსება აუცილებელია.',
+            'type.required' => 'აირჩიეთ ტიპი!',
         ];
     }
 }

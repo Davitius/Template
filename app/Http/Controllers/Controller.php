@@ -54,10 +54,7 @@ class Controller extends BaseController
 
         $paletteArray = [$background, $block1, $block2, $block3, $block4, $block5, $block6, $menu, $usefullinks, $usefullinks2,
             $header, $sliders, $footerWords, $socialIcons, $ULImages, $ULImages2, $Blocks];
-
-//        return view('index', compact('language', 'background', 'menu', 'block1', 'block2',
-//            'block3', 'block4', 'block5', 'block6', 'usefullinks', 'usefullinks2', 'header', 'sliders', 'footerWords',
-//            'socialIcons', 'ULImages', 'ULImages2', 'Blocks'));
+        
 
         return $paletteArray;
     }
