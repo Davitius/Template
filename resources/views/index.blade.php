@@ -2,6 +2,8 @@
 
 @section('content')
 
+{{--  version 3.3.5  --}}
+
     <div class="" style="min-height: 40em">
     <!--<h3 class="header-3">{{__('local.თქვენი სასურველი თემა')}}</h3>-->
         <h3 class="header-3">სადემონსტრაციო შაბლონი</h3>
