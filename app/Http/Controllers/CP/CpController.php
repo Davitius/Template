@@ -19,6 +19,9 @@ class CpController extends Controller
         //        პალიტრა
         $array = $this->palette();
 
-        return view('CP.panel', compact('language', 'array'));
+        $ip = $this->getIp();
+   
+
+        return view('CP.panel', compact('language', 'array', 'ip'));
     }
 }

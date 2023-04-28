@@ -19,6 +19,7 @@
 {{--            <label class="">თქვენ შესული ხართ სისტემაში როგორც:</label>--}}
 {{--            <h6 class="text-center"><label class="">"წვდომის დონე"</label></h6>--}}
 
+            <label class="">{{$ip}}</label>
 
         </div>
     </div>
