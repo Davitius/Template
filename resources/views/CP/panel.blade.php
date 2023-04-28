@@ -16,10 +16,14 @@
             </div>
 
             <h2 class="text-center"><label class="">{{__('local.მოგესალმები')}} {{Auth::user()->name}}</label></h2>
-{{--            <label class="">თქვენ შესული ხართ სისტემაში როგორც:</label>--}}
-{{--            <h6 class="text-center"><label class="">"წვდომის დონე"</label></h6>--}}
+            {{--            <label class="">თქვენ შესული ხართ სისტემაში როგორც:</label>--}}
+            {{--            <h6 class="text-center"><label class="">"წვდომის დონე"</label></h6>--}}
+            <label class="">თქვენი IP: {{$ip}}</label>
 
-
+            <div class="text-center mt-5">
+                <h5 class="">სულ ნახვები:</h5>
+                <h5 class="">{{$allvisits}}</h5>
+            </div>
         </div>
     </div>
 

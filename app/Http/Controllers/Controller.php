@@ -9,6 +9,7 @@ use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\DB;
+use function Nette\Utils\filter;
 
 class Controller extends BaseController
 {
@@ -54,9 +55,25 @@ class Controller extends BaseController
 
         $paletteArray = [$background, $block1, $block2, $block3, $block4, $block5, $block6, $menu, $usefullinks, $usefullinks2,
             $header, $sliders, $footerWords, $socialIcons, $ULImages, $ULImages2, $Blocks];
-        
+
 
         return $paletteArray;
+    }
+
+    public function getIp() {
+        $keys = [
+          'HTTP_CLIENT_IP',
+          'HTTP_X_FORWARDED_FOR',
+          'REMOTE_ADDR'
+        ];
+        foreach ($keys as $key) {
+            if (!empty($_SERVER[$key])) {
+                $ip = trim($_SERVER[$key]);
+                if (filter_var($ip, FILTER_VALIDATE_IP)) {
+                    return $ip;
+                }
+            }
+        }
     }
 
 

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Constructor;
 use App\Models\palette;
 //use Illuminate\Http\Request;
+use App\Models\visitors;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
 
@@ -39,6 +40,10 @@ class IndexController extends Controller
 //        $ULImages = $array[14];
 //        $ULImages2 = $array[15];
 //        $Blocks = $array[16];
+
+        $allvisits = visitors::find(1);
+        $data['allvisits'] = $allvisits->allvisits + 1;
+        $allvisits->update($data);
 
 
         return view('index', compact('language', 'array'));

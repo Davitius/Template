@@ -5,6 +5,7 @@ namespace App\Http\Controllers\CP;
 use App\Http\Controllers\Controller;
 use App\Models\Constructor;
 use App\Models\palette;
+use App\Models\visitors;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\DB;
@@ -19,6 +20,11 @@ class CpController extends Controller
         //        პალიტრა
         $array = $this->palette();
 
-        return view('CP.panel', compact('language', 'array'));
+        $ip = $this->getIp();
+        $visitors = visitors::find(1);
+        $allvisits = $visitors->allvisits;
+
+
+        return view('CP.panel', compact('language', 'array', 'ip', 'allvisits'));
     }
 }
